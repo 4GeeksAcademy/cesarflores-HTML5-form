@@ -4,264 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d7fb735839.js" crossorigin="anonymous"></script>
     <title>HTML5 Form</title>
-    <style>
-        * {
-            font-family: Arial, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-weight: 400;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        input {
-            border: 2px solid lightgrey;
-            border-radius: 4px;
-            margin-top: 5px;
-            padding: 10px;
-        }
-
-        select, ::placeholder {
-            font-size: medium;
-        }
-
-        .mainDiv {
-            display: flex;
-            justify-content: center;
-            padding: 10px 60px;
-            margin: 30px auto;
-        }
-
-        .mainDiv2 {
-            display: block;
-            border: 2px solid lightgray;
-            border-radius: 5px;
-            position: relative;
-            height: auto;
-            width: 100%;
-        }
-
-        .header {
-            background-color: rgb(245, 246, 246);
-            border-bottom: 2px solid lightgray;
-            font-size: 15px;
-            padding: 10px 20px;
-        }
-
-        h1 {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-weight: 600;
-        }
-
-        .secondHeading {
-            color: rgb(139, 0, 0);
-            background-color: rgba(240, 128, 128, 0.323);
-            border: 1px solid rgba(240, 128, 128, 0.253);
-            border-radius: 4px;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            padding: 20px;
-        }
-
-        .ccInfo1 {
-            padding: 10px 20px;
-        }
-
-        label {
-            font-weight: 700;
-        }
-
-        .ccInfo2 {
-            border: none;
-            display: flex;
-        }
-
-        h3 {
-            font-size: medium;
-        }
-
-        .ccInfo2 fieldset {
-            border: none;
-            padding-left: 0;
-            position: relative;
-            width: 100%;
-        }
-
-        #cardN {
-            width: 29rem;
-        }
-
-        #cvcN {
-            width: 15rem;
-        }
-
-        #amount {
-            width: 17rem;
-        }
-
-        .personMain {
-            display: flex;
-            padding: 10px;
-        }
-
-        .personMain fieldset {
-            border: none;
-        }
-
-        .personInfo1 {
-            position: relative;
-            width: 50%;
-        }
-        .personInfo2 {
-            position: relative;
-            width: 50%;
-        }
-
-        .text {
-            width: 100%;
-        }
-
-        .icon {
-            background-color: rgb(108,117,125);
-            width: 50%;
-        }
-
-        .statePostal {
-            display: flex;
-        }
-
-        h5 {
-            margin-bottom: 1px;
-        }
-
-        #states {
-            padding-right: 3px;
-            margin-left: 1px;
-            height: 2.5rem;
-            width: 16rem;
-        }
-
-        input.postalCode {
-            width: 15.4rem !important;
-        }
-
-        h6 {
-            color: grey;
-        }
-
-        .mainButton {
-            background-color: rgb(245, 246, 246);
-            border-top: 2px solid lightgray;
-            display: flex;
-            justify-content: end;
-            padding: 10px;
-        }
-
-        .mainButton button {
-            margin-left: 4px;
-        }
-
-        .buttonA, .buttonB {
-            border: none;
-            color: white;
-            font-size: larger;
-            padding: 10px 13px;
-            text-align: center;
-        }
-
-        .buttonA {
-            background-color: rgb(108,117,125) !important;
-            border-radius: 6px;
-        }
-        .buttonB {
-            background-color: rgb(11,128,255) !important;
-            border-radius: 6px;
-        }
-
-    </style>    
-
 </head>
 
 <body>
     <div class="mainDiv">
+        <div class="header">
+            Payment form example
+        </div>
         <div class="mainDiv2">
-            <div class="header">
-                <h1>Payment form example</h1>
+            <div class="alert">
+                Some fields are missing
             </div>
-            <div class="ccInfo1">
-                <div>
-                    <p class="secondHeading">Some fields are missing</p>
+            <div class="row-inputs-container">
+                <div class="card input-container">
+                    <label for="card">Card #</label>
+                    <input type="tel" inputmode="numeric" name="card" id="card"  pattern="[0-9\s]{13,19}" 
+                    autocomplete="cc-number"  maxlength="19" placeholder="XXXX XXXX XXXX XXXX">
                 </div>
-                <div class="ccInfo2">
-                    <fieldset>
-                        <h3>Card #</h3>
-                        <input type="tel" inputmode="numeric" name="cardN" id="cardN"  pattern="[0-9\s]{13,19}" 
-                        autocomplete="cc-number"  maxlength="19" placeholder="XXXX XXXX XXXX XXXX">
-                    </fieldset>
-                    
-                    <fieldset>
-                        <h3>CVC #</h3>
-                        <input type="tel" name="cvcN" id="cvcN" pattern="[0-9\s]{13,19}" maxlength="5" placeholder="0000">
-                    </fieldset>
-                    
-                    <fieldset>
-                        <h3>Amount</h3>
-                        <label for="">$</label>
-                        <input type="number" name="amount" id="amount" placeholder="Amount">
-                    </fieldset>
+                
+                <div class="cvc input-container">
+                    <label for="cvc">CVC #</label>
+                    <input type="tel" name="cvc" id="cvc" pattern="[0-9\s]{13,19}" maxlength="5" placeholder="0000">
                 </div>
-            </div>
-
-            <div class="personMain">
-                <div class="personInfo1">
-                    <fieldset>
-                        <h5>First Name</h5>
-                        <input type="text" class="text">
-                    </fieldset>
-                    <fieldset>
-                        <h5>City</h5>
-                        <input type="text" class="text">
-                    </fieldset>
-                    <fieldset>
-                        <h5>We accept:</h5>
-                        <input type="text" class="icon">
-                    </fieldset>
-                </div>
-                <div class="personInfo2">
-                    <fieldset>
-                        <h5>Last Name</h5>
-                        <input type="text" class="text">
-                    </fieldset>
-                    <div class="statePostal">
-                        <fieldset>
-                            <h5>State</h5>
-                            <select name="states" id="states">
-                                <option value="Pick a State">Pick a State</option>
-                                <option value="FL">FL</option>
-                                <option value="WI">WI</option>
-                                <option value="CA">CA</option>
-                                <option value="NY">NY</option>
-                                <option value="MO">MO</option>
-                                <option value="TX">TX</option>
-                            </select>
-                        </fieldset>
-                        <fieldset>
-                            <h5>Postal Code</h5>
-                            <input type="number" class="postalCode">
-                        </fieldset>
+                
+                <div class="amount input-container">
+                    <label for="amount">Amount</label>
+                    <div class="icon-input">
+                        $ <input type="number" name="amount" id="amount" placeholder="Amount">
                     </div>
-                    <fieldset>
-                        <h5>Message</h5>
-                        <input type="text" class="text" >
-                        <h6>Add any notes here.</h6>
-                    </fieldset>
+                </div>
+            </div>
+            <div class="row-inputs-container">
+                <div class="first input-container">
+                    <label for="first">First Name</label>
+                    <input type="text" id="first" name="first" />
+                </div>
+                <div class="last input-container">
+                    <label for="last">Last Name</label>
+                    <input type="text" id="last" name="last" />
+                </div>
+            </div>
+            
+            <div class="row-inputs-container">
+                <div class="city input-container">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" />
+                </div>
+                <div class="state input-container">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" />
+                </div>
+                <div class="postal-code input-container">
+                    <label for="postal-code">Postal Code</label>
+                    <input type="tel" inputmode="numeric" name="postal-code" id="postal-code"  pattern="[0-9\s]{13,19}" autocomplete=""  maxlength="9" />
+                </div>
+                
+            </div>
+
+            <div class="row-inputs-container">
+                <div class="accepting-cards input-container">
+                    <div>We Accept:</div>
+                    <div class="card-type">
+                        <input name="card-type" id="mastercard" type="radio" />
+                        <label for="mastercard"><i class="fa-brands fa-cc-mastercard"></i></label>
+
+                        <input name="card-type" id="visa" type="radio" />
+                        <label for="visa"><i class="fa-brands fa-cc-visa"></i></label>
+
+                        <input name="card-type" id="diners" type="radio" />
+                        <label for="diners"><i class="fa-brands fa-cc-diners-club"></i></label>
+
+                        <input name="card-type" id="amex" type="radio" />
+                        <label for="amex"><i class="fa-brands fa-cc-amex"></i></label>
+
+                    </div>
+                </div>
+                <div class="blank"></div>
+                <div class="message input-container">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="5"></textarea>
+                    <div class="notes-here">
+                        Add any notes here.
+                    </div>
                 </div>
             </div>
 
-            <div class="mainButton">
-                <button class="buttonA">Cancel</button>
-                <button class="buttonB">Send</button>
-            </div>
+        </div>
+        <div class="mainButton">
+            <button class="btn buttonA">Cancel</button>
+            <button class="btn buttonB">Send</button>
         </div>
     </div>
 </body>

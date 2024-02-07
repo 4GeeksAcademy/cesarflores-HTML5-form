@@ -1,0 +1,159 @@
+* {
+    font-family: Lato, sans-serif;
+}
+
+input, textarea {
+    border: 2px solid lightgrey;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+select, ::placeholder {
+    font-size: medium;
+}
+
+.mainDiv {
+    background-color: white;
+    border: solid 1px #ccc;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.header {
+    background-color: rgb(245, 246, 246);
+    border-bottom: 2px solid lightgray;
+    font-size: 36px;
+    font-weight: 400;
+    padding: 10px 20px;
+}
+
+.mainDiv2 {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 10px;
+    gap: 20px;
+}
+
+.alert {
+    color: rgb(139, 0, 0);
+    background-color: rgba(240, 128, 128, 0.323);
+    border: 1px solid rgba(240, 128, 128, 0.253);
+    border-radius: 4px;
+    padding: 12px 20px;
+}
+
+label, h5 {
+    font-weight: 400;
+}
+
+.row-inputs-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.row-inputs-container fieldset {
+    border: none;
+    padding: 0;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    flex-basis: 40%;
+}
+
+.cvc {
+    flex-basis: 30%;
+}
+
+.amount {
+    flex-basis: 30%;
+}
+
+.icon-input {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.icon-input input {
+    flex-grow: 1;
+}
+
+.first, .last {
+    flex-basis: 50%;
+}
+
+.city {
+    flex-basis: 50%;
+}
+
+.state, .postal-code {
+    flex-basis: 25%;
+}
+
+.accepting-cards {
+    flex-basis: 20%;
+}
+
+.blank {
+    flex-basis: 30%;
+}
+
+.message {
+    flex-basis: 50%;
+}
+
+.card-type {
+    background-color: gray;
+    border-radius: 4px;
+    display: inline-flex;
+    gap: 5px;
+    padding: 5px;
+}
+
+.card-type label {
+    color: white;
+}
+
+.notes-here {
+    color: gray;
+    font-size: smaller;
+    margin: 0;
+}
+
+
+.mainButton {
+    background-color: rgb(245, 246, 246);
+    border-top: 2px solid lightgray;
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+}
+
+.mainButton button {
+    margin-left: 4px;
+}
+
+.btn {
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: larger;
+    padding: 10px 13px;
+    text-align: center;
+}
+
+.buttonA {
+    background-color: rgb(108,117,125);
+}
+.buttonB {
+    background-color: rgb(11,128,255);
+}
